@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #393e46;
+  background-color: #222831;
   margin: auto -16px;
   padding: 5px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -24,7 +24,7 @@ header h1 {
   font-family: "Pirata One", cursive;
   font-size: xx-large;
   font-weight: 200;
-  width: 200px;
+  width: 100px;
   float: left;
 }
 .lhs {
@@ -33,4 +33,48 @@ header h1 {
   display: flex;
   justify-content: space-between;
   width: 100px;
+}
+.SearchBar {
+  width: 500px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.75);
+}
+.SearchButton {
+  padding: 7px 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  float: right;
+}
+
+.CompanyBox {
+  margin: 20px;
+  padding: 20px;
+  background-color: #222831;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 3px 2px 2px 0px rgba(0, 0, 0, 0.75);
+  line-height: 2rem;
+}
+
+.FlexContainer {
+  padding: 20px 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.CompanyBox h1 {
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+  color: #00adb5;
+  font-family: "Pirata One", sans-serif;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+}
+
+.CompanyBox p span {
+  color: #00adb5;
 }
