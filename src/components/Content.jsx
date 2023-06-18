@@ -7,6 +7,7 @@ import {
   AvatarBadge,
   AvatarGroup,
   Collapse,
+  Tooltip,
 } from "@chakra-ui/react";
 import { Button } from "@mui/base";
 
@@ -31,24 +32,44 @@ function Content() {
             </div>
             <div className="CompanyBoxRhs">
               <Checkbox colorScheme="red"> Register </Checkbox>
-              <AvatarGroup size="sm" max={show ? 5 : 2}>
+              <AvatarGroup size="md" max={show ? 5 : 2}>
                 <Avatar
                   name="Ryan Florence"
                   src="https://bit.ly/ryan-florence"
-                  iconLabel="Ryan Florence"
+                  bg="#00ADB5"
+                  borderColor="#222831"
+                  borderWidth="3px"
+                  label="Ryan Florence"
+                  textTransform="capitalize"
                 />
+
                 <Avatar
                   name="Segun Adebayo"
                   src="https://bit.ly/sage-adebayo"
+                  bg="#00ADB5"
+                  borderColor="#222831"
+                  borderWidth="3px"
                 />
-                <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
+                <Avatar
+                  name="Kent Dodds"
+                  src="https://bit.ly/kent-c-dodds"
+                  bg="#00ADB5"
+                  borderColor="#222831"
+                  borderWidth="3px"
+                />
                 <Avatar
                   name="Prosper Otemuyiwa"
                   src="https://bit.ly/prosper-baba"
+                  bg="#00ADB5"
+                  borderColor="#222831"
+                  borderWidth="3px"
                 />
                 <Avatar
                   name="Christian Nwamba"
                   src="https://bit.ly/code-beast"
+                  bg="#00ADB5"
+                  borderColor="#222831"
+                  borderWidth="3px"
                 />
               </AvatarGroup>
               <Button size="sm" onClick={handleToggle} mt="1rem">
