@@ -39,20 +39,6 @@ function Lhs() {
       return ChangeBound(!Bound);
     }
   }
-
-  // function handleCheck(event) {
-  //   const { id, isChecked } = event.target;
-
-  //   console.log(typeof id);
-
-  //   ChangeCheck((prevNote) => {
-  //     return {
-  //       ...prevNote,
-  //       [id]: !isChecked,
-  //     };
-  //   });
-  // }
-
   return (
     <>
       <div className="lhs">
@@ -74,7 +60,7 @@ function Lhs() {
                   }
             }
           >
-            <AddIcon />
+          <AddIcon />
           </Circle>
           <Tooltip>
             <Avatar
@@ -128,23 +114,29 @@ function Lhs() {
                 </FormControl>
               </div>
               <div>
+                <FormControl isRequired>
                 <FormLabel className="Labels">Role</FormLabel>
                 <Input color="white" placeholder="First name" size="sm" />
+                </FormControl>
               </div>
               <div>
+                <FormControl isRequired>
                 <FormLabel className="Labels">Salary</FormLabel>
                 <Input color="white" placeholder="First name" size="sm" />
+                </FormControl>
               </div>
 
               <div>
+                 <FormControl isRequired>
                 <FormLabel className="Labels">Location</FormLabel>
                 <Input
                   color="white"
                   placeholder="Add , if more than one"
-                  size="sm"
-                />
+                  size="sm" />
+              </FormControl>
               </div>
               <div>
+                 <FormControl isRequired>
                 <FormLabel className="Labels">Deadline</FormLabel>
                 <Input
                   color="white"
@@ -152,18 +144,21 @@ function Lhs() {
                   size="sm"
                   type="datetime-local"
                 />
+                    </FormControl>
               </div>
               <div>
+                 <FormControl isRequired>
                 <FormLabel className="Labels">Internship</FormLabel>
                 <Input
                   color="white"
                   placeholder="Internship period"
                   size="sm"
                 />
+                  </FormControl>
               </div>
               <div>
                 <FormLabel className="Labels">Eligibilty🎓</FormLabel>
-                <FormControl display="flex" alignItems="center">
+                <FormControl isRequired display="flex" alignItems="center">
                   <FormLabel fontWeight="normal" mb="0" color="#C9C9C9">
                     If There is eligibility criteria
                   </FormLabel>
@@ -224,8 +219,6 @@ function Lhs() {
                     )}
                   </div>
                 )}
-
-                {}
               </div>
               <div>
                 <FormLabel className="Labels">Bound</FormLabel>

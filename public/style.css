@@ -96,7 +96,7 @@ header h1 {
   z-index: -1;
   position: fixed;
   display: flex;
-  height: 60%;
+  height: 65%;
   width: 100%;
   background-color: #222831;
   padding: 20px;
@@ -149,6 +149,8 @@ header h1 {
   position: relative;
   height: 114px;
   width: 141px;
+  border-width: 2px;
+  border-color: black;
   background-color: #222831;
   padding: 35px;
   top: -200%;
