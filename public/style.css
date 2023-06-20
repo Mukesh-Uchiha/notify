@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 body {
   background: #222831;
@@ -25,7 +25,7 @@ header {
 
 header h1 {
   color: #fff;
-  font-family: "Pirata One", cursive;
+  font-family: 'Pirata One', cursive;
   font-size: xx-large;
   font-weight: 200;
   width: 100px;
@@ -74,7 +74,7 @@ header h1 {
   font-size: larger;
   font-weight: bolder;
   color: #00adb5;
-  font-family: "Pirata One", sans-serif;
+  font-family: 'Pirata One', sans-serif;
   word-spacing: 5px;
   letter-spacing: 2px;
 }
@@ -96,7 +96,7 @@ header h1 {
   z-index: -1;
   position: fixed;
   display: flex;
-  height: 60%;
+  height: 65%;
   width: 100%;
   background-color: #222831;
   padding: 20px;
@@ -114,13 +114,13 @@ header h1 {
   font-size: 30px;
   width: 100%;
   font-weight: normal;
-  font-family: "Pirata One", sans-serif;
+  font-family: 'Pirata One', sans-serif;
   transition: all 2s ease;
 }
 
 .Labels {
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .inputContainer {
@@ -136,7 +136,7 @@ header h1 {
 
 .inputContainer > div {
   padding: 10px;
-  width: 300px;
+  width: 350px;
 }
 .ButtonContainer {
   display: flex;
@@ -149,6 +149,8 @@ header h1 {
   position: relative;
   height: 114px;
   width: 141px;
+  border-width: 2px;
+  border-color: black;
   background-color: #222831;
   padding: 35px;
   top: -200%;
@@ -162,7 +164,7 @@ header h1 {
 }
 
 .tooltipMenu::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 0;

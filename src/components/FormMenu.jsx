@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Lhs from "./Lhs";
+import React from "react";
 
 function FormMenu() {
   return (
