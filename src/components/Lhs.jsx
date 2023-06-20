@@ -167,14 +167,10 @@ function Lhs() {
                       display="flex"
                       alignItems="center"
                       justifyContent="space-between"
+                      mt={2}
+                      mb={2}
                     >
-                      <FormLabel
-                        fontWeight="normal"
-                        mt={2}
-                        mb={2}
-                        ml={0}
-                        color="#C9C9C9"
-                      >
+                      <FormLabel fontWeight="normal" ml={0} color="#C9C9C9">
                         If it not is through out{' '}
                       </FormLabel>
                       <Switch
