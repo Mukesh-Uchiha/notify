@@ -4,15 +4,18 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 body {
   background: #222831;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 header {
+  z-index: 2;
+  display: block;
+  position: relative;
   background-color: #222831;
   margin: auto -16px;
   padding: 5px 32px;
@@ -22,7 +25,7 @@ header {
 
 header h1 {
   color: #fff;
-  font-family: "Pirata One", cursive;
+  font-family: 'Pirata One', cursive;
   font-size: xx-large;
   font-weight: 200;
   width: 100px;
@@ -71,7 +74,7 @@ header h1 {
   font-size: larger;
   font-weight: bolder;
   color: #00adb5;
-  font-family: "Pirata One", sans-serif;
+  font-family: 'Pirata One', sans-serif;
   word-spacing: 5px;
   letter-spacing: 2px;
 }
@@ -82,6 +85,7 @@ header h1 {
 
 .OpenMenuButton {
   cursor: default;
+  transition: all 1s ease;
 }
 .OpenMenuButton:hover {
   cursor: pointer;
@@ -89,9 +93,10 @@ header h1 {
 }
 
 .Form {
+  z-index: -1;
   position: fixed;
   display: flex;
-  height: 60%;
+  height: 65%;
   width: 100%;
   background-color: #222831;
   padding: 20px;
@@ -99,50 +104,53 @@ header h1 {
   bottom: 0;
   left: 0%;
   right: 0;
-  z-index: -1;
   transition: all 1s ease;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .Formh1 {
-  text-align: center;
   padding-bottom: 0px;
   font-size: 30px;
-  width: 150px;
+  width: 100%;
   font-weight: normal;
-  font-family: "Pirata One", sans-serif;
+  font-family: 'Pirata One', sans-serif;
+  transition: all 2s ease;
 }
 
-.MainContainer {
-  position: relative;
-  transition: 0.5s ease-in-out;
-  z-index: -2;
-}
 .Labels {
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-.FormPadder {
-  padding: 10px;
-}
+
 .inputContainer {
   display: flex;
   flex-wrap: wrap;
+  height: 350px;
+  width: 100%;
   flex-direction: column;
   align-content: flex-start;
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+.inputContainer > div {
+  padding: 10px;
+  width: 350px;
+}
 .ButtonContainer {
   display: flex;
   flex-direction: row-reverse;
+  width: 100%;
+  transition: all 2s ease;
 }
 
 .tooltipMenu {
   position: relative;
   height: 114px;
   width: 141px;
+  border-width: 2px;
+  border-color: black;
   background-color: #222831;
   padding: 35px;
   top: -200%;
@@ -151,12 +159,12 @@ header h1 {
   left: 0;
   right: 0;
   transform: translateX(106px);
-  z-index: -1;
+  z-index: -3;
   transition: all 1s ease;
 }
 
 .tooltipMenu::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 0;
@@ -167,4 +175,25 @@ header h1 {
   border-bottom: 10px solid #222831;
   top: -10px;
   left: 110px;
+}
+.FakeMenu {
+  width: 105%;
+  min-height: 60px;
+  z-index: -1;
+  background-color: #222831;
+  top: 0;
+  margin: auto 0;
+  padding: 5px 32px;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+  transform: translate(-17px, -17px);
+}
+.CompanyBoxRhs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-wrap: nowrap;
 }
