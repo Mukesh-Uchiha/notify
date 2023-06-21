@@ -29,6 +29,11 @@ function Lhs() {
   const [throughtout, ChangeThroughtout] = useState(false);
   const [Bound, ChangeBound] = useState(false);
 
+  const getScroll = () => {
+    console.log(window.scrollY);
+  };
+  window.addEventListener("scroll", getScroll);
+
   function handleCheck(event) {
     const name = event.target.id;
     if (name === "eligibility") {
@@ -40,19 +45,6 @@ function Lhs() {
     }
   }
 
-  // function handleCheck(event) {
-  //   const { id, isChecked } = event.target;
-
-  //   console.log(typeof id);
-
-  //   ChangeCheck((prevNote) => {
-  //     return {
-  //       ...prevNote,
-  //       [id]: !isChecked,
-  //     };
-  //   });
-  // }
-
   return (
     <>
       <div className="lhs">
@@ -61,7 +53,6 @@ function Lhs() {
             size="32px"
             bg="#00ADB5"
             color="white"
-            tabindex="1"
             className="OpenMenuButton"
             onClick={changeFormMenu}
             style={
@@ -101,10 +92,9 @@ function Lhs() {
         className="Form"
         style={
           Status
-            ? { top: "50px", transform: "rotateX(0deg)" }
-            : { top: "-60%", transform: "rotateX(90deg)" }
+            ? { top: "0px", transform: "rotateX(0deg)" }
+            : { top: "-100%", transform: "rotateX(90deg)" }
         }
-        tabindex="2"
       >
         <div>
           <h1
