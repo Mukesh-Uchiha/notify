@@ -1,15 +1,18 @@
-* {
+html {
+  font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-html {
-  font-family: "Poppins", sans-serif;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
 }
 body {
   background: #222831;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 header {
@@ -17,7 +20,7 @@ header {
   display: block;
   position: relative;
   background-color: #222831;
-  margin: auto -16px;
+  margin: auto -10px;
   padding: 5px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   height: 50px;
@@ -37,19 +40,6 @@ header h1 {
   display: flex;
   justify-content: space-between;
   width: 100px;
-}
-.SearchBar {
-  width: 500px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: antiquewhite;
-  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.75);
-}
-.SearchButton {
-  padding: 7px 20px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  float: right;
 }
 
 .CompanyBox {
@@ -82,6 +72,10 @@ header h1 {
 .CompanyBox p span {
   color: #00adb5;
 }
+.CompanyBox p span:hover {
+  color: #00adb5;
+  cursor: pointer;
+}
 
 .OpenMenuButton {
   cursor: default;
@@ -96,7 +90,7 @@ header h1 {
   z-index: -1;
   position: fixed;
   display: flex;
-  height: 60%;
+  height: 65%;
   width: 100%;
   background-color: #222831;
   padding: 20px;
@@ -106,7 +100,7 @@ header h1 {
   right: 0;
   transition: all 1s ease;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .Formh1 {
@@ -136,7 +130,7 @@ header h1 {
 
 .inputContainer > div {
   padding: 10px;
-  width: 300px;
+  width: 350px;
 }
 .ButtonContainer {
   display: flex;
@@ -149,6 +143,8 @@ header h1 {
   position: relative;
   height: 114px;
   width: 141px;
+  border-width: 2px;
+  border-color: black;
   background-color: #222831;
   padding: 35px;
   top: -200%;
@@ -194,4 +190,70 @@ header h1 {
   flex-direction: column;
   align-content: flex-end;
   flex-wrap: nowrap;
+}
+
+.searchBox {
+  transform: translateX(30px);
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  background: #2f3640;
+  height: 50px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.searchBox:hover {
+  background: #46494f;
+  color: #2f3640;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+.searchButton {
+  border: none;
+  color: white;
+  width: 50px;
+  height: 43px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 600px;
+  padding: 0 6px;
+}
+
+@media screen and (max-width: 620px) {
+  .Form {
+    height: auto;
+  }
+  .inputContainer {
+    height: auto;
+  }
+  .inputContainer {
+    height: auto;
+  }
+  .searchBox:hover {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+.MainContainer {
+  margin-top: 20px;
 }

@@ -1,7 +1,7 @@
-import * as React from "react";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import * as React from 'react';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
-import Lhs from "./Lhs";
+import Lhs from './Lhs';
 function Headers() {
   return (
     <header>

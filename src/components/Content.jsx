@@ -1,20 +1,58 @@
+<<<<<<< HEAD
 import * as React from "react";
+import { ChakraProvider, Container } from "@chakra-ui/react";
+import SearchBar from "./SearchBar";
+import Company from "./Company";
+import companyDetails from "../companyDetails";
+function Content() {
+  return (
+    <ChakraProvider>
+      <Container className="MainContainer" maxW="container.sm">
+        <SearchBar />
+
+        {companyDetails.map((items, index) => (
+          <Company
+            key={index}
+            Companyname={items.Companyname}
+            Roles={items.Roles}
+            Salary={items.Salary}
+            Location={items.Location}
+            Eligibilty={items.Eligibilty}
+            Bound={items.Bound}
+            Internship={items.Internship}
+            Deadline={items.Deadline}
+            form={items.form}
+            usersDetails={items.users}
+          />
+        ))}
+=======
+import * as React from 'react';
 import {
   Checkbox,
   ChakraProvider,
   Container,
   Avatar,
-  AvatarBadge,
   AvatarGroup,
-  Collapse,
   Tooltip,
-} from "@chakra-ui/react";
-import { Button } from "@mui/base";
+} from '@chakra-ui/react';
+import { Button } from '@mui/base';
 
 function Content() {
+  const users = [
+    { name: 'Christian Nwamba', src: 'https://bit.ly/ryan-florence' },
+    { name: 'Ryan Florence', src: 'https://bit.ly/sage-adebayo' },
+    { name: 'Segun Adebayo', src: 'https://bit.ly/kent-c-dodds' },
+    { name: 'Kent Dodds' },
+    { name: 'Prosper Otemuyiwa', src: 'https://bit.ly/prosper-baba' },
+  ];
   const [show, setShow] = React.useState(false);
 
   const handleToggle = () => setShow(!show);
+  const TooltipAvatar = (props) => (
+    <Tooltip label={props.name}>
+      <Avatar {...props} />
+    </Tooltip>
+  );
   return (
     <ChakraProvider>
       <Container className="MainContainer" maxW="container.sm">
@@ -33,47 +71,12 @@ function Content() {
             <div className="CompanyBoxRhs">
               <Checkbox colorScheme="red"> Register </Checkbox>
               <AvatarGroup size="md" max={show ? 5 : 2}>
-                <Avatar
-                  name="Ryan Florence"
-                  src="https://bit.ly/ryan-florence"
-                  bg="#00ADB5"
-                  borderColor="#222831"
-                  borderWidth="3px"
-                  label="Ryan Florence"
-                  textTransform="capitalize"
-                />
-
-                <Avatar
-                  name="Segun Adebayo"
-                  src="https://bit.ly/sage-adebayo"
-                  bg="#00ADB5"
-                  borderColor="#222831"
-                  borderWidth="3px"
-                />
-                <Avatar
-                  name="Kent Dodds"
-                  src="https://bit.ly/kent-c-dodds"
-                  bg="#00ADB5"
-                  borderColor="#222831"
-                  borderWidth="3px"
-                />
-                <Avatar
-                  name="Prosper Otemuyiwa"
-                  src="https://bit.ly/prosper-baba"
-                  bg="#00ADB5"
-                  borderColor="#222831"
-                  borderWidth="3px"
-                />
-                <Avatar
-                  name="Christian Nwamba"
-                  src="https://bit.ly/code-beast"
-                  bg="#00ADB5"
-                  borderColor="#222831"
-                  borderWidth="3px"
-                />
+              {users.map((user, index) => (
+          <TooltipAvatar key={index} name={user.name} src={user.src} />
+        ))}
               </AvatarGroup>
               <Button size="sm" onClick={handleToggle} mt="1rem">
-                Show {show ? "Less" : "More"}
+                Show {show ? 'Less' : 'More'}
               </Button>
             </div>
           </div>
@@ -82,6 +85,7 @@ function Content() {
             Form: <span>https://colorhunt.co/palettes/popular</span>
           </p>
         </div>
+>>>>>>> ea3f5a90dfd8899e2b725172f5c2a759abefd0ca
       </Container>
     </ChakraProvider>
   );
