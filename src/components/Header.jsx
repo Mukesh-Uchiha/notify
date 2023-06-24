@@ -1,14 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 import Lhs from './Lhs';
-function Headers() {
+function Headers({ onButtonClicked }) {
   return (
     <header>
       <h1>
         <NotificationsActiveIcon className="Icon" /> Notify
       </h1>
-      <Lhs />
+      <Lhs onButtonClicked={onButtonClicked} />
     </header>
   );
 }

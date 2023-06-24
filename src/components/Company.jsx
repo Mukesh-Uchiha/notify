@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Checkbox,
   ChakraProvider,
   Avatar,
   AvatarGroup,
   Tooltip,
-  Text,
-} from "@chakra-ui/react";
-import { Button } from "@mui/base";
+} from '@chakra-ui/react';
+import { Button } from '@mui/base';
 
 function Company(props) {
   const [isRegistered, setIsRegistereded] = useState(false);
@@ -28,7 +27,7 @@ function Company(props) {
   );
   return (
     <div className="CompanyBox">
-      {" "}
+      {' '}
       <ChakraProvider>
         <h1>{props.Companyname} </h1>
         <hr />
@@ -43,7 +42,7 @@ function Company(props) {
           </div>
           <div className="CompanyBoxRhs">
             <Checkbox colorScheme="red" onChange={handleCheckboxClick}>
-              {!isRegistered ? "Register" : "Registered"}
+              {!isRegistered ? 'Register' : 'Registered'}
             </Checkbox>
 
             <AvatarGroup
@@ -62,16 +61,16 @@ function Company(props) {
               )) || []}
             </AvatarGroup>
             <Button size="sm" onClick={handleToggle} mt="1rem">
-              Show {show ? "Less" : "More"}
+              Show {show ? 'Less' : 'More'}
             </Button>
           </div>
         </div>
         <hr />
         <p>
-          Form:{" "}
+          Form:{' '}
           <a href={props.form}>
-            {" "}
-            <span> {props.form} </span>{" "}
+            {' '}
+            <span> {props.form} </span>{' '}
           </a>
         </p>
       </ChakraProvider>
