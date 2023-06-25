@@ -1,13 +1,10 @@
-html {
-  font-family: "Poppins", sans-serif;
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  overflow-x: hidden;
+}
+html {
+  font-family: "Poppins", sans-serif;
 }
 body {
   background: #222831;
@@ -15,15 +12,14 @@ body {
   overflow-x: hidden;
 }
 
+/* snsdjfn */
 header {
-  z-index: 2;
-  display: block;
-  position: relative;
   background-color: #222831;
-  margin: auto -10px;
+  margin: auto -16px;
   padding: 5px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   height: 50px;
+  position: relative;
 }
 
 header h1 {
@@ -35,6 +31,7 @@ header h1 {
   float: left;
 }
 .lhs {
+  z-index: 2;
   margin-top: 5px;
   float: right;
   display: flex;
@@ -72,10 +69,6 @@ header h1 {
 .CompanyBox p span {
   color: #00adb5;
 }
-.CompanyBox p span:hover {
-  color: #00adb5;
-  cursor: pointer;
-}
 
 .OpenMenuButton {
   cursor: default;
@@ -87,10 +80,9 @@ header h1 {
 }
 
 .Form {
-  z-index: -1;
   position: fixed;
   display: flex;
-  height: 65%;
+  height: 60%;
   width: 100%;
   background-color: #222831;
   padding: 20px;
@@ -104,12 +96,12 @@ header h1 {
 }
 
 .Formh1 {
+  text-align: center;
   padding-bottom: 0px;
   font-size: 30px;
   width: 100%;
   font-weight: normal;
   font-family: "Pirata One", sans-serif;
-  transition: all 2s ease;
 }
 
 .Labels {
@@ -127,11 +119,6 @@ header h1 {
   justify-content: flex-start;
   align-items: flex-start;
 }
-
-.inputContainer > div {
-  padding: 10px;
-  width: 350px;
-}
 .ButtonContainer {
   display: flex;
   flex-direction: row-reverse;
@@ -143,15 +130,11 @@ header h1 {
   position: relative;
   height: 114px;
   width: 141px;
-  border-width: 2px;
-  border-color: black;
   background-color: #222831;
   padding: 35px;
   top: -200%;
   bottom: 0;
   float: right;
-  left: 0;
-  right: 0;
   transform: translateX(106px);
   z-index: -3;
   transition: all 1s ease;
@@ -192,53 +175,14 @@ header h1 {
   flex-wrap: nowrap;
 }
 
-.searchBox {
-  transform: translateX(30px);
+.CompanyBoxRhs {
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  background: #2f3640;
-  height: 50px;
-  border-radius: 40px;
-  padding: 10px;
-}
-
-.searchBox:hover {
-  background: #46494f;
-  color: #2f3640;
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.75);
-}
-
-.searchButton {
-  border: none;
-  color: white;
-  width: 50px;
-  height: 43px;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  background: none;
-  display: flex;
+  align-items: flex-end;
   justify-content: center;
-  align-items: center;
-  transition: 0.4s;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-wrap: nowrap;
 }
-
-.searchInput {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  color: white;
-  font-size: 16px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 600px;
-  padding: 0 6px;
-}
-
 @media screen and (max-width: 620px) {
   .Form {
     height: auto;
@@ -254,6 +198,29 @@ header h1 {
     padding: 0 6px;
   }
 }
+
+.FakeMenu {
+  width: 120%;
+  min-height: 60px;
+  z-index: -1;
+  background-color: #222831;
+  top: 0;
+  margin: auto 0;
+  padding: 5px 32px;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+  transform: translate(-17px, -17px);
+  display: none;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .MainContainer {
-  margin-top: 20px;
+  transition: all 2s ease-in-out;
 }
