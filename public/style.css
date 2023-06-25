@@ -1,33 +1,32 @@
-html {
-  font-family: "Poppins", sans-serif;
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: 100%;
-  max-height: 100%;
+}
+html {
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
 body {
   background: #222831;
   padding: 0;
   overflow-x: hidden;
+  transition: all 2s ease-in-out;
 }
 
 header {
-  z-index: 2;
-  display: block;
-  position: relative;
+  z-index: 3;
   background-color: #222831;
-  margin: auto -10px;
+  margin: auto -16px;
   padding: 5px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   height: 50px;
+  position: relative;
 }
 
 header h1 {
   color: #fff;
+  font-family: "Pirata One", cursive;
   font-family: "Pirata One", cursive;
   font-size: xx-large;
   font-weight: 200;
@@ -35,6 +34,7 @@ header h1 {
   float: left;
 }
 .lhs {
+  z-index: 2;
   margin-top: 5px;
   float: right;
   display: flex;
@@ -65,16 +65,13 @@ header h1 {
   font-weight: bolder;
   color: #00adb5;
   font-family: "Pirata One", sans-serif;
+  font-family: "Pirata One", sans-serif;
   word-spacing: 5px;
   letter-spacing: 2px;
 }
 
 .CompanyBox p span {
   color: #00adb5;
-}
-.CompanyBox p span:hover {
-  color: #00adb5;
-  cursor: pointer;
 }
 
 .OpenMenuButton {
@@ -87,10 +84,8 @@ header h1 {
 }
 
 .Form {
-  z-index: -1;
-  position: fixed;
-  display: flex;
-  height: 65%;
+  position: relative;
+  height: auto;
   width: 100%;
   background-color: #222831;
   padding: 20px;
@@ -104,16 +99,17 @@ header h1 {
 }
 
 .Formh1 {
+  color: #fff;
   padding-bottom: 0px;
   font-size: 30px;
   width: 100%;
   font-weight: normal;
   font-family: "Pirata One", sans-serif;
-  transition: all 2s ease;
 }
 
 .Labels {
   color: #fff;
+  font-family: "Poppins", sans-serif;
   font-family: "Poppins", sans-serif;
 }
 
@@ -122,12 +118,13 @@ header h1 {
   flex-wrap: wrap;
   height: 350px;
   width: 100%;
+  height: 350px;
+  width: 100%;
   flex-direction: column;
   align-content: flex-start;
   justify-content: flex-start;
   align-items: flex-start;
 }
-
 .inputContainer > div {
   padding: 10px;
   width: 350px;
@@ -137,6 +134,8 @@ header h1 {
   flex-direction: row-reverse;
   width: 100%;
   transition: all 2s ease;
+  width: 100%;
+  transition: all 2s ease;
 }
 
 .tooltipMenu {
@@ -144,20 +143,19 @@ header h1 {
   height: 114px;
   width: 141px;
   border-width: 2px;
-  border-color: black;
+  border-color: #222831;
   background-color: #222831;
   padding: 35px;
   top: -200%;
   bottom: 0;
   float: right;
-  left: 0;
-  right: 0;
   transform: translateX(106px);
   z-index: -3;
   transition: all 1s ease;
 }
 
 .tooltipMenu::after {
+  content: "";
   content: "";
   position: absolute;
   display: block;
@@ -192,53 +190,14 @@ header h1 {
   flex-wrap: nowrap;
 }
 
-.searchBox {
-  transform: translateX(30px);
+.CompanyBoxRhs {
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  background: #2f3640;
-  height: 50px;
-  border-radius: 40px;
-  padding: 10px;
-}
-
-.searchBox:hover {
-  background: #46494f;
-  color: #2f3640;
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.75);
-}
-
-.searchButton {
-  border: none;
-  color: white;
-  width: 50px;
-  height: 43px;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  background: none;
-  display: flex;
+  align-items: flex-end;
   justify-content: center;
-  align-items: center;
-  transition: 0.4s;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-wrap: nowrap;
 }
-
-.searchInput {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  color: white;
-  font-size: 16px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 600px;
-  padding: 0 6px;
-}
-
 @media screen and (max-width: 620px) {
   .Form {
     height: auto;
@@ -254,6 +213,79 @@ header h1 {
     padding: 0 6px;
   }
 }
+
+.FakeMenu {
+  width: 120%;
+  min-height: 60px;
+  z-index: -1;
+  background-color: #222831;
+  top: 0;
+  margin: auto 0;
+  padding: 5px 32px;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+  transform: translate(-17px, -17px);
+  display: none;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .MainContainer {
-  margin-top: 20px;
+  transition: all 2s ease-in-out;
+}
+
+.CompanyBoxRhs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 620px) {
+  .Form {
+    height: auto;
+  }
+  .inputContainer {
+    height: auto;
+  }
+  .inputContainer {
+    height: auto;
+  }
+  .searchBox:hover {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+
+.FakeMenu {
+  width: 120%;
+  min-height: 60px;
+  z-index: -1;
+  background-color: #222831;
+  top: 0;
+  margin: auto 0;
+  padding: 5px 32px;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+  transform: translate(-17px, -17px);
+  display: none;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.MainContainer {
+  transition: all 2s ease-in-out;
 }

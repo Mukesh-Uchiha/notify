@@ -66,7 +66,6 @@ function Lhs({ onButtonClicked }) {
           </ButtonGroup>
         </ChakraProvider>
       </div>
-
       <div className="FakeMenu"></div>
     </>
   );
