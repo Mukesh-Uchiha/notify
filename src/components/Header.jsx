@@ -1,8 +1,8 @@
-import React from 'react';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import * as React from "react";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 
-import Lhs from './Lhs';
-function Headers({ onButtonClicked }) {
+import Lhs from "./Lhs";
+function Headers({onButtonClicked}) {
   return (
     <header>
       <h1>
