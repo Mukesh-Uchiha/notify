@@ -1,27 +1,33 @@
-import React, { useState } from 'react';
-import { Avatar, ChakraProvider, Circle, Tooltip } from '@chakra-ui/react';
+import React, { useState } from "react";
+import { Avatar, ChakraProvider, Circle, Tooltip } from "@chakra-ui/react";
 
-import { Button, ButtonGroup } from '@chakra-ui/react';
-import { AddIcon } from '@chakra-ui/icons';
+import { Button, ButtonGroup } from "@chakra-ui/react";
+import { AddIcon } from "@chakra-ui/icons";
 
-function Lhs({ onButtonClicked }) {
+function Lhs({
+  onButtonClicked,
+  statusButtonValue,
+  signupButtonValue,
+  onStatusButtonClick,
+  onSignupButtonClick,
+}) {
   const [Status, ChangeStatus] = useState(true);
   const changeFormMenu = () => {
     ChangeStatus(!Status);
     console.log(Status);
-    onButtonClicked(Status);
+    onStatusButtonClick(statusButtonValue);
   };
 
   const [signUp, ChangeSignUpStatus] = useState(true);
   const showSignUp = () => {
     ChangeSignUpStatus(!signUp);
-    console.log(signUp);
+    onSignupButtonClick(signupButtonValue);
   };
 
   const getScroll = () => {
     console.log(window.scrollY);
   };
-  window.addEventListener('scroll', getScroll);
+  window.addEventListener("scroll", getScroll);
 
   return (
     <>
@@ -36,10 +42,10 @@ function Lhs({ onButtonClicked }) {
             style={
               !Status
                 ? {
-                    transform: 'rotate(315deg) ',
+                    transform: "rotate(315deg) ",
                   }
                 : {
-                    transform: 'rotate(0deg)',
+                    transform: "rotate(0deg)",
                   }
             }
           >
@@ -56,17 +62,6 @@ function Lhs({ onButtonClicked }) {
           </Tooltip>
         </ChakraProvider>
       </div>
-      <div
-        className="tooltipMenu"
-        style={!signUp ? { top: '65px' } : { top: '-200%' }}
-      >
-        <ChakraProvider>
-          <ButtonGroup spacing="6">
-            <Button colorScheme="blue">Login</Button>
-          </ButtonGroup>
-        </ChakraProvider>
-      </div>
-      <div className="FakeMenu"></div>
     </>
   );
 }

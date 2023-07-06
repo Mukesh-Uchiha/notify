@@ -1,38 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   ChakraProvider,
   FormControl,
   FormLabel,
   Input,
   Switch,
-} from '@chakra-ui/react';
-import { Button, ButtonGroup } from '@chakra-ui/react';
-import '../css/fade.css';
+} from "@chakra-ui/react";
+import { Button, ButtonGroup } from "@chakra-ui/react";
+import "../css/fade.css";
 
-function FormDiv({ Status }) {
+function FormDiv({ statusButtonValue, onStatusButtonClick }) {
   const [eligibility, ChangeEligibility] = useState(false);
   const [throughout, ChangeThroughout] = useState(false);
   const [Bound, ChangeBound] = useState(false);
-
   const formDetail = [
-    { placeholder: 'company name', label: 'company ' },
-    { placeholder: 'Enter the role(s)', label: ' role' },
-    { placeholder: 'Enter the CTC ', label: 'Salary' },
-    { placeholder: 'Enter the Location', label: 'Company Location' },
+    { placeholder: "company name", label: "company " },
+    { placeholder: "Enter the role(s)", label: " role" },
+    { placeholder: "Enter the CTC ", label: "Salary" },
+    { placeholder: "Enter the Location", label: "Company Location" },
     {
-      placeholder: 'Enter the last Date ',
-      label: 'Deadline',
-      type: 'datetime-local',
+      placeholder: "Enter the last Date ",
+      label: "Deadline",
+      type: "datetime-local",
     },
   ];
 
   function HandleCheck(event) {
     const name = event.target.id;
-    if (name === 'eligibility') {
+    if (name === "eligibility") {
       return ChangeEligibility(!eligibility);
-    } else if (name === 'throughout') {
+    } else if (name === "throughout") {
       return ChangeThroughout(!throughout);
-    } else if (name === 'Bound') {
+    } else if (name === "Bound") {
       return ChangeBound(!Bound);
     }
   }
@@ -42,30 +41,38 @@ function FormDiv({ Status }) {
   useEffect(() => {
     let timeoutId;
 
-    if (!Status) {
+    if (!statusButtonValue) {
       timeoutId = setTimeout(() => {
         setIsAnimating(true);
-      }, 1000);
+      }, 500);
     } else {
-      setIsAnimating(false);
+      timeoutId = setTimeout(() => {
+        setIsAnimating(false);
+      }, 1000);
     }
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [Status]);
+  }, [statusButtonValue]);
+
+  const handleOnCloseClick = () => {
+    onStatusButtonClick(false);
+  };
 
   return (
     <div
-      className={`Form ${!Status ? 'slide-fade-enter' : 'slide-fade-exit'}`}
-      style={{ display: !isAnimating ? 'block' : 'none' }}
+      className={`Form ${
+        !statusButtonValue ? "slide-fade-enter" : "slide-fade-exit"
+      }`}
+      style={{ display: !isAnimating ? "block" : "none" }}
     >
       <div>
         <h1
           className="Formh1"
           style={
-            Status
-              ? { transform: 'translate(10px, 0px)' }
-              : { transform: 'translate(10px, -50px)' }
+            statusButtonValue
+              ? { transform: "translate(10px, 0px)" }
+              : { transform: "translate(10px, -50px)" }
           }
         >
           Fill Details
@@ -122,7 +129,7 @@ function FormDiv({ Status }) {
                     mb={2}
                   >
                     <FormLabel fontWeight="normal" ml={0} color="#C9C9C9">
-                      If it not is through out{' '}
+                      If it not is through out{" "}
                     </FormLabel>
                     <Switch id="throughout" isRequred onChange={HandleCheck} />
                   </FormControl>
@@ -190,18 +197,19 @@ function FormDiv({ Status }) {
               colorScheme="blue"
               style={
                 !isAnimating
-                  ? { transform: 'translate(0px, 0px)' }
-                  : { transform: 'translate(0px, 50px)' }
+                  ? { transform: "translate(0px, 0px)" }
+                  : { transform: "translate(0px, 50px)" }
               }
             >
               Save
             </Button>
             <Button
+              onClick={handleOnCloseClick}
               colorScheme="gray"
               style={
                 !isAnimating
-                  ? { transform: 'translate(0px, 0px)' }
-                  : { transform: 'translate(0px, 50px)' }
+                  ? { transform: "translate(0px, 0px)" }
+                  : { transform: "translate(0px, 50px)" }
               }
             >
               Cancel

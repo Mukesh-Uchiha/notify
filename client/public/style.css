@@ -61,8 +61,7 @@ header h1 {
 
 .CompanyBox h1 {
   text-align: center;
-  font-size: larger;
-  font-weight: bolder;
+  font-size: x-large;
   color: #00adb5;
   font-family: "Pirata One", sans-serif;
   font-family: "Pirata One", sans-serif;
@@ -288,4 +287,75 @@ header h1 {
 }
 .MainContainer {
   transition: all 2s ease-in-out;
+}
+.bellactice {
+  transition: tilt-shaking 2s ease-in-out;
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.sideMenu {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  width: 300px;
+  font-size: small;
+  background: #222831;
+  height: 100vh;
+  position: fixed;
+  padding: 70px 30px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.sideMenuOn {
+  width: 300px;
+  right: 0;
+  transition: all 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.sideMenuOff {
+  width: 0px;
+  transform: rotateY(90deg);
+  right: -300px;
+  transition: all 1s ease-in-out;
+}
+.CompanyStatus {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px #fff solid;
+  border-radius: 5px;
+}
+.RegisteredCompany {
+  display: flex;
+  flex-direction: column;
+}
+.NotRegisteredCompany {
+  display: flex;
+  flex-direction: column;
+}
+.CompanyStatus ul {
+  list-style: none;
+}
+
+.CompanyStatus li {
+  padding: 10px 25px;
+  border-top: 1px #fff solid;
+  width: 100%;
 }
