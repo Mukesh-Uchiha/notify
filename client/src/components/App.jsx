@@ -1,47 +1,25 @@
 import React, { useState } from "react";
-import Content from "./Content";
-import Headers from "./Header";
-import FormDiv from "./FormDiv";
-import SideMenu from "./SideMenu";
+import LoginForm from "./LoginForm";
+import Home from "./Home";
+
 function App() {
-  const [statusButtonValue, setStatusButtonValue] = useState(false);
-  const [signupButtonValue, setSignupButtonValue] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleStatusButtonClick = () => {
-    setStatusButtonValue(!statusButtonValue);
-    if (signupButtonValue && statusButtonValue) {
-      setSignupButtonValue(true);
-    } else {
-      setSignupButtonValue(false);
-    }
-  };
-
-  const handleSignupButtonClick = () => {
-    setSignupButtonValue(!signupButtonValue);
-    if (signupButtonValue && statusButtonValue) {
-      setStatusButtonValue(true);
-    } else {
-      setStatusButtonValue(false);
-    }
+  const handleLogin = () => {
+    setIsLoggedIn(true);
   };
 
   return (
     <div>
-      <Headers
-        statusButtonValue={statusButtonValue}
-        signupButtonValue={signupButtonValue}
-        onStatusButtonClick={handleStatusButtonClick}
-        onSignupButtonClick={handleSignupButtonClick}
-      />
-
-      <FormDiv
-        statusButtonValue={statusButtonValue}
-        onStatusButtonClick={setStatusButtonValue}
-      />
-
-      <Content />
-      <SideMenu signupButtonValue={signupButtonValue} />
+      {isLoggedIn ? (
+        <Home />
+      ) : (
+        <div>
+          <LoginForm onLogin={handleLogin} />
+        </div>
+      )}
     </div>
   );
 }
+
 export default App;

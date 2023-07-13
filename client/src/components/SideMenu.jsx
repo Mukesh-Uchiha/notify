@@ -42,7 +42,8 @@ function SideMenu({ signupButtonValue }) {
       <ChakraProvider>
         <ButtonGroup spacing="6">
           <Button colorScheme="teal" variant="outline" width={"200px"}>
-            Login
+            {" "}
+            <a href="#">Logout</a>
           </Button>
         </ButtonGroup>
       </ChakraProvider>
