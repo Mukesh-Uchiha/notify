@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { ChakraProvider, Container } from '@chakra-ui/react';
-import companyDetails from '../companyDetails';
-import Company from './Company';
+import * as React from "react";
+import { ChakraProvider, Container } from "@chakra-ui/react";
+import companyDetails from "../companyDetails";
+import Company from "./Company";
 function Content() {
   return (
     <ChakraProvider>

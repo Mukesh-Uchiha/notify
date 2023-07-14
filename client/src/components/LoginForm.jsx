@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
-import "../scss/LoginForm.scss";
 
 const LoginForm = () => {
   const [inputValue, setInputValue] = useState("");

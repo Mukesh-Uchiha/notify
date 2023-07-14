@@ -6,8 +6,11 @@
 html {
   font-family: "Poppins", sans-serif;
 }
+.BgPattern {
+  background-image: url("http://www.transparenttextures.com/patterns/batthern.png") !important;
+}
 body {
-  background-color: rgb(237, 241, 245) !important;
+  background-color: rgb(237, 241, 245);
   padding: 0;
   overflow-y: overlay;
 }

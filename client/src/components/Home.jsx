@@ -3,8 +3,8 @@ import Content from "./Content";
 import Headers from "./Header";
 import FormDiv from "./FormDiv";
 import SideMenu from "./SideMenu";
-import "../css/style.css";
-function App() {
+
+function Home() {
   const [statusButtonValue, setStatusButtonValue] = useState(false);
   const [signupButtonValue, setSignupButtonValue] = useState(false);
 
@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="BgPattern">
       <Headers
         statusButtonValue={statusButtonValue}
         signupButtonValue={signupButtonValue}
@@ -45,4 +45,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default Home;
