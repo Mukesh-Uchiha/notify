@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from "react";
+
+import { useNavigate } from "react-router-dom";
 import "../scss/LoginForm.scss";
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = () => {
   const [inputValue, setInputValue] = useState("");
+  const [loginCLicked, setloginClicked] = useState(false);
+  const navigate = useNavigate();
 
+  const GroupId = "12345";
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
     console.log(inputValue.length);
   };
-
   const handleButtonClick = () => {
-    if (inputValue.length === 4) {
-      onLogin();
+    setloginClicked(!loginCLicked);
+    console.log(loginCLicked);
+  };
+  const handleSummitClick = (e) => {
+    if (loginCLicked && inputValue.length === 5 && inputValue === GroupId) {
+      navigate("/home");
+    } else {
+      e.preventDefault();
     }
   };
 
@@ -60,26 +70,33 @@ const LoginForm = ({ onLogin }) => {
       </div>
       <div className="loginSection">
         <h2> Login </h2>
-        <button
-          type="button"
-          className="login-with-google-btn"
-          onClick={handleButtonClick}
-          style={{ margin: "20px auto 0px auto" }}
-        >
-          Sign in with Google
-        </button>
-        <p className="and" style={{ margin: "20px auto 0px auto" }}>
-          {" "}
-          &{" "}
-        </p>
-        <h5 style={{ margin: "20px auto 0px auto" }}>Group Id</h5>
-        <input
-          className="text"
-          type="text"
-          placeholder="Enter The Group id"
-          value={inputValue}
-          onChange={handleInputChange}
-        />
+        <form>
+          <button
+            type="button"
+            className="login-with-google-btn"
+            onClick={handleButtonClick}
+            style={{ margin: "20px auto 0px auto" }}
+          >
+            Sign in with Google
+          </button>
+          <p className="and" style={{ margin: "20px auto 0px auto" }}>
+            {" "}
+            &{" "}
+          </p>
+          <h5 style={{ margin: "20px auto 0px auto" }}>Group Id</h5>
+          <input
+            className="text"
+            type="text"
+            placeholder="Enter The Group id"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+          <br />
+          <button className="Submit" type="submit" onClick={handleSummitClick}>
+            {" "}
+            Join the Group{" "}
+          </button>
+        </form>
       </div>
     </div>
   );

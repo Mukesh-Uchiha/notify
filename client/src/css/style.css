@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow-y: overlay;
 }
 html {
   font-family: "Poppins", sans-serif;
@@ -10,6 +9,7 @@ html {
 body {
   background-color: rgb(237, 241, 245) !important;
   padding: 0;
+  overflow-y: overlay;
 }
 
 ::-webkit-scrollbar {

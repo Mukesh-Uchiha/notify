@@ -1,7 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ChakraProvider, ButtonGroup, Button } from "@chakra-ui/react";
 function SideMenu({ signupButtonValue }) {
-  console.log(signupButtonValue);
+  const navigate = useNavigate();
   const UserName = "Mukesh";
   return (
     <div
@@ -41,7 +42,14 @@ function SideMenu({ signupButtonValue }) {
       </div>
       <ChakraProvider>
         <ButtonGroup spacing="6">
-          <Button colorScheme="teal" variant="outline" width={"200px"}>
+          <Button
+            onClick={() => {
+              navigate("/");
+            }}
+            colorScheme="teal"
+            variant="outline"
+            width={"200px"}
+          >
             {" "}
             <a href="#">Logout</a>
           </Button>
